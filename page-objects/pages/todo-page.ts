@@ -11,6 +11,7 @@ export class TodoPage {
     readonly activeButton: Locator;
     readonly completedButton: Locator;
     readonly clearCompletedButton: Locator;
+    readonly allTasksButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -21,6 +22,7 @@ export class TodoPage {
         this.activeButton = page.getByText("Active")
         this.completedButton = this.page.locator('[href=\"#/completed\"]')
         this.clearCompletedButton = page.getByText("Clear completed")
+        this.allTasksButton = page.getByText("All")
     }
 
     async open(): Promise<void> {
@@ -45,7 +47,11 @@ export class TodoPage {
         await this.clearCompletedButton.click()
     }
 
-    async checkCompletedAButton(): Promise<void> {
+    async checkCompletedButton(): Promise<void> {
         await this.completedButton.click()
+    }
+
+    async checkAllTasksButton(): Promise<void> {
+        await this.allTasksButton.click()
     }
 }
