@@ -18,8 +18,7 @@ test.describe("Todo App tests", async () => {
     await todoPage.checkCompletedButton();
     await todoPage.checkClearCompletedButton();
     await todoPage.checkTaskCount(0);
-    await todoPage.checkAllTasksButton();
-    await todoPage.checkTaskCount(1);
+    await todoPage.tasks.checkAllCompleted();
   })
 });
 

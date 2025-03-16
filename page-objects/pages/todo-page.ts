@@ -50,8 +50,4 @@ export class TodoPage {
     async checkCompletedButton(): Promise<void> {
         await this.completedButton.click()
     }
-
-    async checkAllTasksButton(): Promise<void> {
-        await this.allTasksButton.click()
-    }
 }
